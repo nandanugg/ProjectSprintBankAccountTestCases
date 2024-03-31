@@ -13,7 +13,7 @@ const postTransactionNegativePayloads = generateTestObjects({
     fromCurrency: "USD",
 })
 
-const TEST_NAME = "(balance test)"
+const TEST_NAME = "(transaction test)"
 
 export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags) {
     if (!user) return null
