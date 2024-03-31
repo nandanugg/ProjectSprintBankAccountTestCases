@@ -88,11 +88,18 @@ export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags
         'get balance history should return 200': (r) => r.status === 200,
         'get balance history should have the history balance': (r) => {
             let res = isExists(r, 'data')
+            console.log('data exists')
             if (!res) return false
+            console.log('res exists')
             if (!Array.isArray(res)) return false
+            console.log('res is array')
             if (res.length !== 1) return false
+            console.log('res is array is more than one')
 
-            return res.some(s => s.balance === positivePayload.balances)
+            return res.some(s => {
+                console.log(s.balance, positivePayload.balances)
+                return s.balance === positivePayload.balances
+            })
             // return res.some(s => {
             //     return (s.balance === positivePayload.balances)
             // (s.currency === positivePayload.fromCurrency) &&
