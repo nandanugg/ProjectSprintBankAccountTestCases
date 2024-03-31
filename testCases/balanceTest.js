@@ -113,9 +113,9 @@ export function TestGetBalance(user, addedBalanceRes, prevBalance = 0, doNegativ
     return newLatestBalance
 }
 
-export function TestGetBalanceHistory(user, prevBalance, doNegativeCase, debug, tags) {
+export function TestGetBalanceHistory(user, addBalanceRes, doNegativeCase, debug, tags) {
     if (!user) return null
-    if (!prevBalance) return null
+    if (!addBalanceRes) return null
 
     let res
     // eslint-disable-next-line no-undef
@@ -142,10 +142,10 @@ export function TestGetBalanceHistory(user, prevBalance, doNegativeCase, debug, 
             if (res.length < 1) return false
 
             return res.some(s => {
-                return (s.balance === prevBalance.addedBalance) &&
-                    (s.currency === prevBalance.currency) &&
-                    (s.source && s.source.bankAccountNumber === prevBalance.senderBankAccountNumber) &&
-                    (s.source && s.source.bankName === prevBalance.senderBankName)
+                return (s.balance === addBalanceRes.addedBalance) &&
+                    (s.currency === addBalanceRes.currency) &&
+                    (s.source && s.source.bankAccountNumber === addBalanceRes.senderBankAccountNumber) &&
+                    (s.source && s.source.bankName === addBalanceRes.senderBankName)
             })
         },
     })
