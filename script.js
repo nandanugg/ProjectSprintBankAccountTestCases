@@ -48,9 +48,10 @@ export default function () {
     for (let i = 0; i < 5; i++) {
       let addBalanceRes = TestAddBalance(usr, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "addBalance" })
       sleep(generateRandomNumber(1, 3))
+      let latestBalance = TestGetBalance(usr, addBalanceRes, prevBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "getBalance" })
+      sleep(generateRandomNumber(1, 3))
+
       for (let j = 0; j < 10; j++) {
-        let latestBalance = TestGetBalance(usr, addBalanceRes, prevBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "getBalance" })
-        sleep(generateRandomNumber(1, 3))
         latestBalance = TestTransaction(usr, latestBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "transaction" })
         sleep(generateRandomNumber(1, 3))
         prevBalance = latestBalance
