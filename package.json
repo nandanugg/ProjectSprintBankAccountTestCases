@@ -1,0 +1,17 @@
+{
+  "name": "social-media-test-cases",
+  "version": "1.0.0",
+  "description": "### Prerequisites - [K6](https://k6.io/docs/get-started/installation/)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "dependencies": {
+    "@types/k6": "^0.50.0"
+  }
+}
