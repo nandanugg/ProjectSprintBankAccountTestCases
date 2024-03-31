@@ -8,7 +8,7 @@ const postBalanceNegativePayloads = generateTestObjects({
     transferProofImg: { type: "string", notNull: true, isUrl: true },
 }, {
     senderBankAccountNumber: generateUniqueName(),
-    senderBankName: "BNI",
+    senderBankName: "Bank Negara Indonesia",
     addedBalance: 1000,
     currency: "USD",
     transferProofImg: "https://www.google.com",
@@ -38,7 +38,7 @@ export function TestAddBalance(user, doNegativeCase, debug, tags) {
 
     const positivePayload = {
         senderBankAccountNumber: generateUniqueName(),
-        senderBankName: "BNI",
+        senderBankName: "Bank Negara Indonesia",
         addedBalance: generateRandomNumber(100, 10000),
         currency: "USD",
         transferProofImg: user.imageUrls[0],

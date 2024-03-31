@@ -8,7 +8,7 @@ const postTransactionNegativePayloads = generateTestObjects({
     transferProofImg: { type: "string", notNull: true, isUrl: true },
 }, {
     recipientBankAccountNumber: generateUniqueName(),
-    recipientBankName: "BNI",
+    recipientBankName: "Bank Central Asia",
     balances: 1000,
     fromCurrency: "USD",
 })
@@ -32,7 +32,7 @@ export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags
 
     const positivePayload = {
         recipientBankAccountNumber: generateUniqueName(),
-        recipientBankName: "BNI",
+        recipientBankName: "Bank Central Asia",
         balances: generateRandomNumber(1, latestBalance / 10), // to make sure that transaction can be executed up to 10 times
         fromCurrency: "USD",
     }
