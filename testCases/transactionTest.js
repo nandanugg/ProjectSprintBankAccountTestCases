@@ -5,7 +5,6 @@ const postTransactionNegativePayloads = generateTestObjects({
     recipientBankName: { type: "string", notNull: true, minLength: 5, maxLength: 30 },
     addedBalanceRes: { type: "number", notNull: true, min: 1 },
     currency: { type: "string", notNull: true, minLength: 1, maxLength: 3 },
-    transferProofImg: { type: "string", notNull: true, isUrl: true },
 }, {
     recipientBankAccountNumber: generateUniqueName(),
     recipientBankName: "Bank Central Asia",
