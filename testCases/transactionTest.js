@@ -3,8 +3,8 @@ import { generateTestObjects, isExists, testPostJson, assert, generateUniqueName
 const postTransactionNegativePayloads = generateTestObjects({
     recipientBankAccountNumber: { type: "string", notNull: true, minLength: 5, maxLength: 50 },
     recipientBankName: { type: "string", notNull: true, minLength: 5, maxLength: 30 },
-    addedBalanceRes: { type: "number", notNull: true, min: 1 },
-    currency: { type: "string", notNull: true, minLength: 1, maxLength: 3 },
+    balances: { type: "number", notNull: true, min: 1 },
+    fromCurrency: { type: "string", notNull: true, minLength: 1, maxLength: 3 },
 }, {
     recipientBankAccountNumber: generateUniqueName(),
     recipientBankName: "Bank Central Asia",
