@@ -4,6 +4,7 @@ import { TestLogin } from './testCases/loginTest.js';
 import { TestRegistration } from './testCases/registerTest.js'
 import { TestTransaction } from './testCases/transactionTest.js';
 import { TestUpload } from './testCases/uploadFileTest.js';
+import { generateRandomNumber } from './helper.js';
 
 export const options = {
   // A number specifying the number of VUs to run concurrently.
@@ -46,11 +47,11 @@ export default function () {
     let prevBalance = 0
     for (let i = 0; i < 10; i++) {
       let addBalanceRes = TestAddBalance(usr, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "addBalance" })
-      sleep(1)
+      sleep(generateRandomNumber(1, 3))
       let latestBalance = TestGetBalance(usr, addBalanceRes, prevBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "getBalance" })
-      sleep(1)
+      sleep(generateRandomNumber(1, 3))
       latestBalance = TestTransaction(usr, latestBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "transaction" })
-      sleep(1)
+      sleep(generateRandomNumber(1, 3))
       prevBalance = latestBalance
     }
   }
