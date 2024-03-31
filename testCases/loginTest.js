@@ -2,7 +2,6 @@ import { generateTestObjects, generateRandomPassword, isEqual, isExists, testPos
 
 const loginNegativePayloads = generateTestObjects({
     email: { type: "string", notNull: true, isEmail: true },
-    name: { type: "string", minLength: 5, maxLength: 50, notNull: true },
     password: { type: "string", minLength: 5, maxLength: 15, notNull: true }
 }, {
     email: generateRandomEmail(),
