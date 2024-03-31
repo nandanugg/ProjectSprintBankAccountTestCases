@@ -28,6 +28,7 @@ export function TestBalance(user, doNegativeCase, debug = false, tags = {}) {
 
 export function TestAddBalance(user, doNegativeCase, debug, tags) {
     if (!user) return null
+    if (!user.imageUrls) return null
 
     let res
     // eslint-disable-next-line no-undef
@@ -40,7 +41,7 @@ export function TestAddBalance(user, doNegativeCase, debug, tags) {
         senderBankName: "BNI",
         addedBalance: generateRandomNumber(100, 10000),
         currency: "USD",
-        transferProofImg: user.imageUrls[generateRandomNumber[0, user.imageUrls.length - 1]],
+        transferProofImg: user.imageUrls[0],
     }
 
     if (doNegativeCase) {
