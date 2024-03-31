@@ -40,7 +40,7 @@ export function TestAddBalance(user, doNegativeCase, debug, tags) {
         senderBankName: "BNI",
         addedBalance: generateRandomNumber(100, 10000),
         currency: "USD",
-        transferProofImg: "https://www.google.com",
+        transferProofImg: user.imageUrls[generateRandomNumber[0, user.imageUrls.length - 1]],
     }
 
     if (doNegativeCase) {
