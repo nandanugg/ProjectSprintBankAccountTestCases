@@ -3,7 +3,7 @@ import { generateTestObjects, isExists, testPostJson, assert, generateUniqueName
 const postBalanceNegativePayloads = generateTestObjects({
     senderBankAccountNumber: { type: "string", notNull: true, minLength: 5, maxLength: 50 },
     senderBankName: { type: "string", notNull: true, minLength: 5, maxLength: 30 },
-    addedBalanceRes: { type: "number", notNull: true, min: 1 },
+    addedBalance: { type: "number", notNull: true, min: 1 },
     currency: { type: "string", notNull: true, minLength: 1, maxLength: 3 },
     transferProofImg: { type: "string", notNull: true, isUrl: true },
 }, {
@@ -11,7 +11,7 @@ const postBalanceNegativePayloads = generateTestObjects({
     senderBankName: "Bank Negara Indonesia",
     addedBalance: 1000,
     currency: "USD",
-    transferProofImg: "https://www.google.com",
+    transferProofImg: "https://www.google.com/img.jpg",
 })
 
 const TEST_NAME = "(balance test)"
