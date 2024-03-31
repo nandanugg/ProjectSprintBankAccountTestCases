@@ -46,7 +46,7 @@ export default function () {
     // Do transaction 10 times
     let prevBalance = 0
     for (let i = 0; i < 5; i++) {
-      console.log("begin loop");
+      usr = TestUpload(usr, !ONLY_POSITIVE_CASE, { test: "upload" })
       let addBalanceRes = TestAddBalance(usr, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "addBalance" })
       // sleep(generateRandomNumber(1, 3))
       let latestBalance = TestGetBalance(usr, addBalanceRes, prevBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "getBalance" })
