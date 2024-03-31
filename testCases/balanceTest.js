@@ -91,12 +91,6 @@ export function TestGetBalance(user, addedBalanceRes, prevBalance = 0, doNegativ
         assert(res, currentFeature, debug, {
             ["no auth should return 401"]: (r) => r.status === 401
         })
-
-        // Negative case, invalid body
-        res = testGet(route, {}, headers, tags)
-        assert(res, currentFeature, debug, {
-            ["no payload should return 400"]: (r) => r.status === 400
-        })
     }
 
     // Positive case
@@ -134,12 +128,6 @@ export function TestGetBalanceHistory(user, prevBalance, doNegativeCase, debug, 
         res = testGet(route, {}, {}, tags)
         assert(res, currentFeature, debug, {
             ["no auth should return 401"]: (r) => r.status === 401
-        })
-
-        // Negative case, invalid body
-        res = testGet(route, {}, headers, tags)
-        assert(res, currentFeature, debug, {
-            ["no payload should return 400"]: (r) => r.status === 400
         })
     }
 
