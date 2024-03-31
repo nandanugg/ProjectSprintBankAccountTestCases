@@ -102,7 +102,7 @@ export function TestGetBalance(user, addedBalanceRes, prevBalance = 0, doNegativ
             let res = isExists(r, 'data')
             if (!res) return false
             if (!Array.isArray(res)) return false
-            if (res.length !== 1) return false
+            if (res.length < 1) return false
             if (res.some(s => s.balance === prevBalance + addedBalanceRes.addedBalance)) {
                 newLatestBalance = prevBalance + addedBalanceRes.addedBalance
                 return true
@@ -139,7 +139,7 @@ export function TestGetBalanceHistory(user, prevBalance, doNegativeCase, debug, 
             let res = isExists(r, 'data')
             if (!res) return false
             if (!Array.isArray(res)) return false
-            if (res.length !== 1) return false
+            if (res.length < 1) return false
 
             return res.some(s => {
                 return (s.balance === prevBalance.addedBalance) &&

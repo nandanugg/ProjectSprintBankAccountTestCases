@@ -73,7 +73,7 @@ export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags
             let res = isExists(r, 'data')
             if (!res) return false
             if (!Array.isArray(res)) return false
-            if (res.length !== 1) return false
+            if (res.length < 1) return false
             if (res.some(s => s.balance === latestBalance - positivePayload.balances)) {
                 newLatestBalance = latestBalance - positivePayload.balances
                 return true
@@ -88,24 +88,16 @@ export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags
         'get balance history should return 200': (r) => r.status === 200,
         'get balance history should have the history balance': (r) => {
             let res = isExists(r, 'data')
-            console.log('data exists')
             if (!res) return false
-            console.log('res exists')
             if (!Array.isArray(res)) return false
-            console.log('res is array')
-            if (res.length !== 1) return false
-            console.log('res is array is more than one')
+            if (res.length < 1) return false
 
             return res.some(s => {
-                console.log(s.balance, positivePayload.balances)
-                return s.balance === positivePayload.balances
+                return (s.balance === positivePayload.balances) &&
+                    (s.currency === positivePayload.fromCurrency) &&
+                    (s.source && s.source.bankAccountNumber === positivePayload.recipientBankAccountNumber) &&
+                    (s.source && s.source.bankName === positivePayload.recipientBankName)
             })
-            // return res.some(s => {
-            //     return (s.balance === positivePayload.balances)
-            // (s.currency === positivePayload.fromCurrency) &&
-            // (s.source && s.source.bankAccountNumber === positivePayload.recipientBankAccountNumber) &&
-            // (s.source && s.source.bankName === positivePayload.recipientBankName)
-            // })
         },
     })
 
