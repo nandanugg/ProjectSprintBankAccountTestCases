@@ -1,8 +1,8 @@
 import { generateTestObjects, isExists, testPostJson, assert, generateUniqueName, testGet, generateRandomNumber } from "../helper.js";
 
 const postTransactionNegativePayloads = generateTestObjects({
-    senderBankAccountNumber: { type: "string", notNull: true, minLength: 5, maxLength: 50 },
-    senderBankName: { type: "string", notNull: true, minLength: 5, maxLength: 30 },
+    recipientBankAccountNumber: { type: "string", notNull: true, minLength: 5, maxLength: 50 },
+    recipientBankName: { type: "string", notNull: true, minLength: 5, maxLength: 30 },
     addedBalanceRes: { type: "number", notNull: true, min: 1 },
     currency: { type: "string", notNull: true, minLength: 1, maxLength: 3 },
     transferProofImg: { type: "string", notNull: true, isUrl: true },
