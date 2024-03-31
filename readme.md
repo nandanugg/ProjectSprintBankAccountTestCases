@@ -15,5 +15,5 @@ BASE_URL=http://localhost:8080 make run
 ```
 #### For load testing
 ```bash
-make runAllTestCases
+BASE_URL=http://localhost:8080 make runAllTestCases
 ```
