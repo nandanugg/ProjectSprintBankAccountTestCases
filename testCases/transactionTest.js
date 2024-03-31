@@ -92,12 +92,13 @@ export function TestTransaction(user, latestBalance, doNegativeCase, debug, tags
             if (!Array.isArray(res)) return false
             if (res.length !== 1) return false
 
-            return res.some(s => {
-                return (s.balance === positivePayload.balances)
-                // (s.currency === positivePayload.fromCurrency) &&
-                // (s.source && s.source.bankAccountNumber === positivePayload.recipientBankAccountNumber) &&
-                // (s.source && s.source.bankName === positivePayload.recipientBankName)
-            })
+            return res.some(s => s.balance === positivePayload.balances)
+            // return res.some(s => {
+            //     return (s.balance === positivePayload.balances)
+            // (s.currency === positivePayload.fromCurrency) &&
+            // (s.source && s.source.bankAccountNumber === positivePayload.recipientBankAccountNumber) &&
+            // (s.source && s.source.bankName === positivePayload.recipientBankName)
+            // })
         },
     })
 
