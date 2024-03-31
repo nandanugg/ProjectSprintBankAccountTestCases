@@ -39,9 +39,7 @@ export default function () {
     usr = TestTransaction(usr, latestBalance, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "transaction" })
   } else {
     usr = TestRegistration(!ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "register" })
-    sleep(1)
     usr = TestLogin(usr, !ONLY_POSITIVE_CASE, DEBUG_ALL, { test: "login" })
-    sleep(1)
 
     // Do transaction 10 times
     let prevBalance = 0
