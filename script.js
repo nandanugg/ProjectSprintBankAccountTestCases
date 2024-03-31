@@ -4,7 +4,6 @@ import { TestLogin } from './testCases/loginTest.js';
 import { TestRegistration } from './testCases/registerTest.js'
 import { TestTransaction } from './testCases/transactionTest.js';
 import { TestUpload } from './testCases/uploadFileTest.js';
-import { generateRandomNumber } from './helper.js';
 
 export const options = {
   // A number specifying the number of VUs to run concurrently.
